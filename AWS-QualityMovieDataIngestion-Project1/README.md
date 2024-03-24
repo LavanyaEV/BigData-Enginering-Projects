@@ -1,4 +1,4 @@
-### Introduction
+![image](https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/823f2e75-36a5-49fd-8e2e-937f201011e8)### Introduction
 This project is regarding Quality Movie Data Ingestion in AWS. Dataset can be found in the project folder. This is going to be batch processing where we will get data everyday from IMDB and will process it and put in redshift. Since we are ingesting quality movie data, we should have some data quality checks. Eg: rating>8, some columns should not be null etc. We will consume data from S3, then evaluate Data Quality checks. Based on its result, we will ingest succesful data to Redshift table and failed data to some S3 location for analysis.
 
 ### Pre-Requisites
@@ -69,7 +69,7 @@ This project is regarding Quality Movie Data Ingestion in AWS. Dataset can be fo
 - Now we can create the glue job. Go to glue and select visual ETL. First give source as S3 and select the metadata catalog we created for movies.csv data.
 <img width="400" alt="s3" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/73b91b8d-cee0-4092-84f6-e9a06e2caa77">
 
-- Add Data Quality Evaluation component. Copy paste the rules we create in the above step to this one and provide other configuartions as below. Here, we will continue the job even if Data Quality check fails.
+- Add Data Quality Evaluation component. Copy paste the rules we create in the above step to this one and provide other configuartions as below. Here, we will continue the job even if Data Quality check fails. You can see that Data quality events are being sent to Eventbridge.
 <img width="400" alt="dq" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/b5ddadd3-d7a8-48d0-9f96-b0d1a65db228">
 <img width="400" alt="dqconfig" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/96281d6d-2780-4cb8-a624-6afebb31333a">
 
@@ -93,7 +93,20 @@ This project is regarding Quality Movie Data Ingestion in AWS. Dataset can be fo
 
 - Our glue job will look like this. Go to Job details, attach the IAM role. Give no of workers as 2. Also, give the job_name parameter.
 <img width="430" alt="glue" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/e8a1c380-df87-4e8c-ae90-31805c9122d6">
-<img width="430" alt="glue" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/8a845a9e-b66d-441c-b002-a64553764a5d">
+<img width="400" alt="glue" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/8a845a9e-b66d-441c-b002-a64553764a5d">
+
+- Now run the job. You can see that the job fails and gives below error. It is because, as seen above, all the Data Quality check events are sent to eventbridge. But the monitoring connection is breaking, so we need to create the VPC endpoint for monitoring, giving the same vpc, subnet, security group as that of Glue job.
+<img width="400" alt="vpc" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/92336ea0-f046-48be-8f77-75edb2f36ec5">
+<img width="400" alt="vpc" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/83b95143-242b-4e4b-9e6f-69951714a682">
+
+- Click on VPC link of redshift cluster and click on create endpoint. Seach monitoring and add the interface. Select the same vpc, subnet and security group as that of Connection. Then click on create endpoint.
+<img width="400" alt="vpc" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/4743d221-3e75-4224-8d42-8e10eadc9055">
+<img width="400" alt="vpc" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/bfb35563-aee6-4988-a741-e99bd554c7c2">
+<img width="400" alt="vpc" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/ceb3a892-6965-4ad0-b880-0df979f514f7">
+
+
+
+
 
 
 
