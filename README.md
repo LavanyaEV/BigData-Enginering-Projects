@@ -1,0 +1,1 @@
+In this repository, you can find various Big Data Engineering projects done in Cloud platforms (AWS/Azure/GCP). This will give you insights about how to create robust Cloud Data Infrastructure for handling huge volume of data which are ingested daily in your organization
