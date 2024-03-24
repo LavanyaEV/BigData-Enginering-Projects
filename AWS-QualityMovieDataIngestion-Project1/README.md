@@ -15,7 +15,7 @@ This project is regarding Quality Movie Data Ingestion in AWS. Dataset can be fo
 - SNS
 
 ### Architecture Flow
-![Architecture](https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/74378793-61e2-4bf5-a530-720c27c977b3)
+<img src="[https://your-image-url.type](https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/74378793-61e2-4bf5-a530-720c27c977b3)" width="100" height="100">
 - Consume data from S3
 - Evaluate Data Quality checks 
 - Either proceed or terminate Glue job, if data quality rule fails. If it is failed, log it into EventBridge and get notified on email (SNS)
