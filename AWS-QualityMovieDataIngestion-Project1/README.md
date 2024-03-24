@@ -104,6 +104,18 @@ This project is regarding Quality Movie Data Ingestion in AWS. Dataset can be fo
 <img width="400" alt="vpc" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/bfb35563-aee6-4988-a741-e99bd554c7c2">
 <img width="400" alt="vpc" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/ceb3a892-6965-4ad0-b880-0df979f514f7">
 
+- Now again click on Run job. This time, the job executes successfully. You can check the redshift table to check the ingested data.
+<img width="400" alt="success" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/ec376f92-0a6b-48ed-834d-f958c8eef603">
+<img width="400" alt="redshift" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/ccdd4fb4-0edd-47a7-a6ac-950a020015ae">
+
+- Now check the S3 buckets to see the Bad_data (failed records) and Rule_outcome details.
+<img width="400" alt="baddata" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/b910228b-40e5-42be-9f3f-b0424753f6ae">
+<img width="400" alt="ruleoutcome" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/65463a2e-f42a-4f48-862a-e8cc2b771415">
+
+
+
+
+
 
 
 
