@@ -27,8 +27,17 @@ This project is regarding Quality Movie Data Ingestion in AWS. Dataset can be fo
 - First, upload the imbd_movies_rating.csv file to S3 bucket.
 <img width="300" alt="S3" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/326d3e5c-6511-4741-a4c9-cf2bfe6d8261">
 
-- Now create a redshift cluster. Inside that create target table in Redshift using script given inside this project folder.
-  <img width="400" alt="redshift" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/b4ba2209-aa79-46df-8d28-8c6cdc5317e1">
-  <img width="400" alt="table" src="[https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/](https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/26232499-93cf-4c21-ac0e-ef79df98b57a)">
+- Now create a redshift cluster by giving username and password. Inside that create target table in Redshift using script given inside this project folder.
+<img width="400" alt="redshift" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/b4ba2209-aa79-46df-8d28-8c6cdc5317e1">
+<img width="400" alt="table" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/f66d3428-36dc-4d71-8196-7a56b2a1d1b3">
+
+- Now we have to crawl both movies_csv file and this redshift target table in order to get the metadata(schema and datatypes) which will be stored in Glue Database (create a database in Glue in order to store these metadata), so that we can directly make use of Glue Catalog. Below is the S3 crawler with source given as the s3 movies.csv file in our s3 bucket.
+<img width="400" alt="database" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/34ae68ed-44f7-4537-bafc-16e0741afd45">
+<img width="400" alt="S3crawler" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/69c65090-208d-4a19-897f-925430990bac">
+
+- In order to create crawler for Redshift (so that crawler can crawl target table in redshift), we require a jdbc connection. So go to Connection in Glue and click create connection. Give the source as Redshift and then select the cluster we created and then create the connection
+<img width="400" alt="S3crawler" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/e055ea73-422e-415f-854a-f13c10c50b71">
+ 
+
 
 
