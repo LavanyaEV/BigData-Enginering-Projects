@@ -15,4 +15,4 @@ This project is regarding Quality Movie Data Ingestion in AWS. Dataset can be fo
 - SNS
 
 ### Architecture Flow
-![image](https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/74378793-61e2-4bf5-a530-720c27c977b3)
+![Architecture](https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/74378793-61e2-4bf5-a530-720c27c977b3)
