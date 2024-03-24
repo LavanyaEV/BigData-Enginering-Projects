@@ -36,7 +36,7 @@ This project is regarding Quality Movie Data Ingestion in AWS. Dataset can be fo
 <img width="400" alt="S3crawler" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/69c65090-208d-4a19-897f-925430990bac">
 <img width="400" alt="iam" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/a3930cb5-d321-4ab8-b8cf-026976f1499b">
 
-- In order to create crawler for Redshift (so that crawler can crawl target table in redshift), we require a jdbc connection. So go to Connection in Glue and click create connection. Give the source as Redshift and then select the cluster we created, give its username and password and then create the connection. Now go to crawlers, and then create a crawler for Redshift target table with source as JDBC (give the databse/schema/targettable we created in Redshift)and target as the Database(that we created under Glue Database to store metadata that is crawled by crawled) in order to store the metadata.
+- In order to create crawler for Redshift (so that crawler can crawl target table in redshift), we require a jdbc connection. So go to Connection in Glue and click create connection. Give the source as Redshift and then select the cluster we created, give its username and password and then create the connection. Now go to crawlers, and then create a crawler for Redshift target table with source as JDBC (give the database/schema/targettable we created in Redshift), also select the connection we created above and then give target as the Database(that we created under Glue Database to store metadata that is crawled by crawled) in order to store the metadata.
 <img width="400" alt="connection" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/e055ea73-422e-415f-854a-f13c10c50b71">
 <img width="400" alt="redshiftcrawler" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/9ebd2013-22da-411b-a2c5-8669dba60a54">
 
@@ -52,7 +52,20 @@ This project is regarding Quality Movie Data Ingestion in AWS. Dataset can be fo
 ![image](https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/5522c8d2-f54a-42d9-b970-b759f93d6b35)
 ![image](https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/587fb395-c40a-4fe3-88e5-b970a862fda4)
 - Now run the  crawler again. It will be succesful this time. Once done, go to the databse in glue and check the table that is created with the metadata of redshift table.
-<img width="400" alt="error" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/0b3e9e33-e637-4197-908a-57694104021d">
+<img width="400" alt="metadata" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/0b3e9e33-e637-4197-908a-57694104021d">
+
+- Now we need to create Data Quality rules. Go to the metadata of S3 crawler we created (inside glue database). Go to Data Quality option. click on create rule-set. If you are creating it for the first time, you have to execute that in order to get the recommendations. It will recommend all the rules after scanning the data, add the required rules (you can give the imdb rating range from 8 to 10, to get the quality data) and click create.
+<img width="400" alt="dataquality" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/588cd62c-d5cc-46c6-8dc3-c99101beb55a">
+<img width="400" alt="dataquality" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/8a72c374-8d95-4f16-88df-93a846a21d0b">
+<img width="400" alt="error" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/35f35c24-4e7d-45ad-9a61-f84fbe229495">
+<img width="400" alt="error" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/0956265e-0edd-43eb-8759-a63fef52a01c">
+<img width="400" alt="error" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/deaf17ec-e93f-40a2-84a6-8791181e47a1">
+
+
+
+
+
+
 
 
 
