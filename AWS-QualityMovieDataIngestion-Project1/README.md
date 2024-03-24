@@ -54,12 +54,20 @@ This project is regarding Quality Movie Data Ingestion in AWS. Dataset can be fo
 - Now run the  crawler again. It will be succesful this time. Once done, go to the databse in glue and check the table that is created with the metadata of redshift table.
 <img width="400" alt="metadata" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/0b3e9e33-e637-4197-908a-57694104021d">
 
-- Now we need to create Data Quality rules. Go to the metadata of S3 crawler we created (inside glue database). Go to Data Quality option. click on create rule-set. If you are creating it for the first time, you have to execute that in order to get the recommendations. It will recommend all the rules after scanning the data, add the required rules (you can give the imdb rating range from 8 to 10, to get the quality data) and click create.
+- Now we need to create Data Quality rules. Go to the metadata of S3 crawler we created (inside glue database). Go to Data Quality option. click on create rule-set. If you are creating it for the first time, you have to execute that in order to get the recommendations. It will recommend all the rules after scanning the data, add the required rules (you can give the imdb rating range from 8 to 10, to get the quality data) and click create. You can see all the rules being added as the below image. Then click on save ruleset.
 <img width="400" alt="dataquality" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/588cd62c-d5cc-46c6-8dc3-c99101beb55a">
 <img width="400" alt="dataquality" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/8a72c374-8d95-4f16-88df-93a846a21d0b">
-<img width="400" alt="error" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/35f35c24-4e7d-45ad-9a61-f84fbe229495">
-<img width="400" alt="error" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/0956265e-0edd-43eb-8759-a63fef52a01c">
-<img width="400" alt="error" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/deaf17ec-e93f-40a2-84a6-8791181e47a1">
+<img width="400" alt="insertrules" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/35f35c24-4e7d-45ad-9a61-f84fbe229495">
+<img width="400" alt="insertrules" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/0956265e-0edd-43eb-8759-a63fef52a01c">
+<img width="400" alt="rules" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/deaf17ec-e93f-40a2-84a6-8791181e47a1">
+
+- Now, in order to get the data quality score, click on Run option above that ruleset that we created now. Then give the run details, attach the iam role, then also specify the result location (here, its an S3 bucket. You can create an S3 bucket to store these results and provide its location). Then click on run. Once its succesful, you can see the score (here, 95%, 41/43 rules passed). You can go to S3 location we gave, download the results and check where Data quality check got failed.
+<img width="400" alt="rulescore" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/ea0ea595-32b8-4ef0-a062-91f070d29a40">
+<img width="400" alt="rulescore" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/911dd4ea-2d02-45cf-b7c2-ceb2f56676f4">
+<img width="400" alt="rulescore" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/09e6ca80-ecfb-45ad-884f-48261a4e44c7">
+
+
+
 
 
 
