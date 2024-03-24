@@ -15,7 +15,4 @@ This project is regarding Quality Movie Data Ingestion in AWS. Dataset can be fo
 - SNS
 
 ### Architecture Flow
-![Architecture](AWS-QualityMovieDataIngestion-Project1/pipeline-execution-images/Architecture.PNG)  
-
-
-
+<img width="493" alt="Architecture" src="AWS-QualityMovieDataIngestion-Project1/pipeline-execution-images/Architecture.PNG">
