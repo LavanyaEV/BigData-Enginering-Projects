@@ -1,4 +1,4 @@
-### Introduction
+![image](https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/210fc077-42e3-491c-ab8c-65e7c77e8c33)### Introduction
 This project is regarding Quality Movie Data Ingestion in AWS. Dataset can be found in the project folder. This is going to be batch processing where we will get data everyday from IMDB and will process it and put in redshift. Since we are ingesting quality movie data, we should have some data quality checks. Eg: rating>8, some columns should not be null etc. We will consume data from S3, then evaluate Data Quality checks. Based on its result, we will ingest succesful data to Redshift table and failed data to some S3 location for analysis.
 
 ### Pre-Requisites
@@ -43,7 +43,7 @@ This project is regarding Quality Movie Data Ingestion in AWS. Dataset can be fo
 - Now run the crawler, you will get below error. But u can see that we have attached all the necessary policies with IAM role. So the reason why its happening is, redshift has to maintain some internal things etc in S3. So S3 is not under the same VPC, that’s why its giving error. So we have to create an endpoint for our S3 in the same region of our Redshift. 
 <img width="400" alt="error" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/905b3aa6-c4c2-48f1-8783-27917cb5dfed">
 
-- To change that, click on the VPC link of our redshift cluster (go to cluster and go to properties, there u can see the VPC). Click on endpoints. Click create endpoint. Provide a name-> in services, select S3 and select below gateway-> select vpc same as that of redshift. Select the routing table attcahed with that, and now click create endpoint. You can see the endpoint for s3 created.
+- To change that, click on the VPC link of our redshift cluster (go to cluster and go to properties, there u can see the VPC). Click on endpoints. Click create endpoint. Provide a name-> in services, select S3 and select below gateway-> select vpc same as that of redshift. Select the routing table attcahed with that, and now click create endpoint. You can see the endpoint for s3 created. Also create a VPC nedpoint for glue in similar way.
   
 ![image](https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/4c66825e-b5c8-451f-9f1b-b9dbf7d392c8)
 ![image](https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/92e801b0-b09b-4f93-bce9-4feb65635df4)
@@ -73,9 +73,20 @@ This project is regarding Quality Movie Data Ingestion in AWS. Dataset can be fo
 <img width="400" alt="dq" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/b5ddadd3-d7a8-48d0-9f96-b0d1a65db228">
 <img width="400" alt="dqconfig" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/96281d6d-2780-4cb8-a624-6afebb31333a">
 
-- You can see there are 2 flows, since we tick 2 things above, one is for Data Quality results and another is for Original data. Thats why 2 flows got created. Data Quality Result is used to get the pass or fail status of configured rules. It has some additional columns to see the status. This gives the high level overview of the rules we applied and its status (failed/success). Original Data means it contains the original incoming data with rowlevel outcomes, i.e, it will have additional columns which gives the status(failed/success) of each row after applying data quality rules.
+- You can see there are 2 flows, since we tick 2 things above, one is for Data Quality results and another is for Original data. Thats why 2 flows got created. Data Quality Result (ruleOutcome) is used to get the pass or fail status of configured rules. It has some additional columns to see the status. This gives the high level overview of the rules we applied and its status (failed/success). Original Data (rowLevelOutcome) means it contains the original incoming data with rowlevel outcomes, i.e, it will have additional columns which gives the status(failed/success) of each row after applying data quality rules.
 <img width="400" alt="flow1" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/bd4f354f-1c85-46d9-9621-d2e6af8782e6">
 <img width="400" alt="flow2" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/52263bc0-572d-44b4-a8d1-ac35abdb2e7d">
+
+- RuleOutcome you can directly put into an S3 bucket and you can analyze it. (you can create an S3 bucket rule_outcome/). Now for RowlevelOutcome (original data), there will be 2 flows for success and failure. So add a conditional router. It will have 2 flows, output_group and default_group.
+<img width="400" alt="ruleoutcome" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/cdf9e9b5-60b1-423e-901f-90f73926b474">
+<img width="400" alt="conditionalroute" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/287ab066-bcb8-4ceb-ad31-fc73dd044e66">
+
+- Output_group means it defines a set of conditions a record/row has to meet in order to be routed to the output_group. So here we will check for the failed records by giving the below condition. All the successful records will go to default_group
+<img width="400" alt="conditionalroute" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/15d5fe03-ef7c-40ae-a1ef-247cd9ff04db">
+
+  
+
+
 
 
   
