@@ -25,4 +25,4 @@ This project is regarding Quality Movie Data Ingestion in AWS. Dataset can be fo
 
 ### Step-By-Step Explanation
 - First, upload the imbd_movies_rating.csv file to S3 bucket.
-<img width="493" alt="Architecture" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/326d3e5c-6511-4741-a4c9-cf2bfe6d8261">
+<img width="300" alt="Architecture" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/326d3e5c-6511-4741-a4c9-cf2bfe6d8261">
