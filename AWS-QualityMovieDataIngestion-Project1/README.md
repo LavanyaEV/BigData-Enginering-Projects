@@ -104,13 +104,25 @@ This project is regarding Quality Movie Data Ingestion in AWS. Dataset can be fo
 <img width="400" alt="vpc" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/bfb35563-aee6-4988-a741-e99bd554c7c2">
 <img width="400" alt="vpc" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/ceb3a892-6965-4ad0-b880-0df979f514f7">
 
-- Now again click on Run job. This time, the job executes successfully. You can check the redshift table to check the ingested data.
+- Now again click on Run job. This time, the job executes successfully. You can check the redshift table to check the ingested data. You can see all the succesful records which passed all data quality rules.
 <img width="400" alt="success" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/ec376f92-0a6b-48ed-834d-f958c8eef603">
 <img width="400" alt="redshift" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/ccdd4fb4-0edd-47a7-a6ac-950a020015ae">
 
 - Now check the S3 buckets to see the Bad_data (failed records) and Rule_outcome details.
 <img width="400" alt="baddata" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/b910228b-40e5-42be-9f3f-b0424753f6ae">
 <img width="400" alt="ruleoutcome" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/65463a2e-f42a-4f48-862a-e8cc2b771415">
+
+- Now we need to create an alert in case our Data Quality check fails in the Glue job (our job will still run because we configured it to continue even if it fails). For that you can create an SNS tiopic with the mail id where you want to recieve notification. Then create an Eventbridge rule. Click on create rule, give a name. Select below configurations and click create rule. Now run the jpb again. Check your mailid, you can see that we recieved a notification that Data Quality is failed. 
+<img width="400" alt="eventbridge" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/94752a8e-cacf-450a-93b7-eb9f798e28bc">
+<img width="400" alt="eventbridge" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/53326ef7-49f3-4394-a2d7-3ad7cb18e96a">
+<img width="400" alt="eventbridge" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/36bc9f00-a0c2-4041-8e64-d6623f5ea076">
+<img width="400" alt="eventbridge" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/babc6329-34be-4866-be75-5846cd63723b">
+
+Congrats, you have succesfully completed the project!!!
+
+
+
+
 
 
 
