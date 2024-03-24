@@ -116,7 +116,7 @@ This project is regarding Quality Movie Data Ingestion in AWS. Dataset can be fo
 <img width="400" alt="eventbridge" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/94752a8e-cacf-450a-93b7-eb9f798e28bc">
 <img width="400" alt="eventbridge" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/53326ef7-49f3-4394-a2d7-3ad7cb18e96a">
 <img width="400" alt="eventbridge" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/36bc9f00-a0c2-4041-8e64-d6623f5ea076">
-<img width="400" alt="eventbridge" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/babc6329-34be-4866-be75-5846cd63723b">
+<img width="400" alt="eventbridge" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/3ac01d74-85fd-4b68-863b-4c261368cd5e">
 
 Congrats, you have succesfully completed the project!!!
 
