@@ -16,3 +16,11 @@ This project is regarding Quality Movie Data Ingestion in AWS. Dataset can be fo
 
 ### Architecture Flow
 ![Architecture](https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/74378793-61e2-4bf5-a530-720c27c977b3)
+- Consume data from S3
+- Evaluate Data Quality checks 
+- Either proceed or terminate Glue job, if data quality rule fails. If it is failed, log it into EventBridge and get notified on email (SNS)
+- Ingest succesful records into Redshift and failed records into S3, which can be analyzed later.
+
+### Step-By-Step Explanation
+- First, upload the imbd_movies_rating.csv file to S3 bucket.
+  ![image](https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/7d31e76b-8290-4cff-bf4e-a04839166f7b)
