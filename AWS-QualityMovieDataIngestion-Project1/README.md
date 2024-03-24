@@ -64,7 +64,23 @@ This project is regarding Quality Movie Data Ingestion in AWS. Dataset can be fo
 - Now, in order to get the data quality score, click on Run option above that ruleset that we created now. Then give the run details, attach the iam role, then also specify the result location (here, its an S3 bucket. You can create an S3 bucket to store these results and provide its location). Then click on run. Once its succesful, you can see the score (here, 95%, 41/43 rules passed). You can go to S3 location we gave, download the results and check where Data quality check got failed.
 <img width="400" alt="rulescore" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/ea0ea595-32b8-4ef0-a062-91f070d29a40">
 <img width="400" alt="rulescore" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/911dd4ea-2d02-45cf-b7c2-ceb2f56676f4">
-<img width="400" alt="rulescore" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/09e6ca80-ecfb-45ad-884f-48261a4e44c7">
+<img width="400" alt="s3dq" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/09e6ca80-ecfb-45ad-884f-48261a4e44c7">
+
+- Now we can create the glue job. Go to glue and select visual ETL. First give source as S3 and select the metadata catalog we created for movies.csv data.
+<img width="400" alt="gluescore" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/73b91b8d-cee0-4092-84f6-e9a06e2caa77">
+
+- Add Data Quality Evaluation component. Copy paste the rules we create in the above step to this one and provide other configuartions as below. Here, we will continue the job even if Data Quality check fails.
+<img width="400" alt="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/b5ddadd3-d7a8-48d0-9f96-b0d1a65db228">
+<img width="400" alt="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/96281d6d-2780-4cb8-a624-6afebb31333a">
+
+- You can see there are 2 flows, since we tick 2 things above, one is for Data Quality results and another is for Original data. Thats why 2 flows got created. Data Quality Result is used to get the pass or fail status of configured rules. It has some additional columns to see the status. This gives the high level overview of the rules we applied and its status (failed/succes). Original Data means it contains the original incoming data with rowlevel outcomes, i.e, it will have additional columns which gives the status(failed/success) of each row after applying data quality rules.
+<img width="400" alt="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/bd4f354f-1c85-46d9-9621-d2e6af8782e6">
+<img width="400" alt="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/52263bc0-572d-44b4-a8d1-ac35abdb2e7d">
+
+
+  
+
+
 
 
 
