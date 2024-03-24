@@ -82,7 +82,18 @@ This project is regarding Quality Movie Data Ingestion in AWS. Dataset can be fo
 <img width="400" alt="conditionalroute" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/287ab066-bcb8-4ceb-ad31-fc73dd044e66">
 
 - Output_group means it defines a set of conditions a record/row has to meet in order to be routed to the output_group. So here we will check for the failed records by giving the below condition. All the successful records will go to default_group
-<img width="400" alt="conditionalroute" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/15d5fe03-ef7c-40ae-a1ef-247cd9ff04db">
+<img width="400" alt="outputgroup" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/15d5fe03-ef7c-40ae-a1ef-247cd9ff04db">
+
+- Now, we can route the failed records in he output_group to S3 bucket (u can create an s3 bucket called bad_data/) in order to analyze the failed records. We can also create Athena table on top of it for further analysis.
+<img width="400" alt="conditionalroute" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/be22261e-6bda-4aee-914e-82b2dfdabeb3">
+
+- Now, put the succesful records of the default_group to Redshift table. Before that, apply change schema in order to give the same datatype to columns as that of RedShift table (otherwise it will append the datatype and create a new column, if its not same). Then provide the redshift table details and the metadata catalog we created for Redshift table
+<img width="400" alt="schemachange" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/22bdddc1-8d18-4c21-8209-66e32e562c72">
+<img width="400" alt="redshift" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/cc8f7863-b74e-4098-80b3-a72741a4e31d">
+
+
+
+
 
   
 
