@@ -91,6 +91,12 @@ This project is regarding Quality Movie Data Ingestion in AWS. Dataset can be fo
 <img width="400" alt="schemachange" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/22bdddc1-8d18-4c21-8209-66e32e562c72">
 <img width="400" alt="redshift" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/cc8f7863-b74e-4098-80b3-a72741a4e31d">
 
+- Our glue job will look like this. Go to Job details, attach the IAM role. Give no of workers as 2. Also, give the job_name parameter.
+<img width="430" alt="glue" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/e8a1c380-df87-4e8c-ae90-31805c9122d6">
+<img width="430" alt="glue" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/8a845a9e-b66d-441c-b002-a64553764a5d">
+
+
+
 
 
 
