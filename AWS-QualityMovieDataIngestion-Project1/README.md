@@ -25,4 +25,10 @@ This project is regarding Quality Movie Data Ingestion in AWS. Dataset can be fo
 
 ### Step-By-Step Explanation
 - First, upload the imbd_movies_rating.csv file to S3 bucket.
-<img width="300" alt="Architecture" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/326d3e5c-6511-4741-a4c9-cf2bfe6d8261">
+<img width="300" alt="S3" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/326d3e5c-6511-4741-a4c9-cf2bfe6d8261">
+
+- Now create a redshift cluster. Inside that create target table in Redshift using script given inside this project folder.
+  <img width="400" alt="redshift" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/b4ba2209-aa79-46df-8d28-8c6cdc5317e1">
+  <img width="400" alt="table" src="[https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/](https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/26232499-93cf-4c21-ac0e-ef79df98b57a)">
+
+
