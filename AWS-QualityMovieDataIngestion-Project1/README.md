@@ -44,6 +44,7 @@ This project is regarding Quality Movie Data Ingestion in AWS. Dataset can be fo
 <img width="400" alt="error" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/905b3aa6-c4c2-48f1-8783-27917cb5dfed">
 
 - To change that, click on the VPC link of our redshift cluster (go to cluster and go to properties, there u can see the VPC). Click on endpoints. Click create endpoint. Provide a name-> in services, select S3 and select below gateway-> select vpc same as that of redshift. Select the routing table attcahed with that, and now click create endpoint. You can see the endpoint for s3 created.
+  
 ![image](https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/4c66825e-b5c8-451f-9f1b-b9dbf7d392c8)
 ![image](https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/92e801b0-b09b-4f93-bce9-4feb65635df4)
 ![image](https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/d154bad8-cc99-4245-bcc1-1fb1f84437f5)
@@ -51,7 +52,7 @@ This project is regarding Quality Movie Data Ingestion in AWS. Dataset can be fo
 ![image](https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/5522c8d2-f54a-42d9-b970-b759f93d6b35)
 ![image](https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/587fb395-c40a-4fe3-88e5-b970a862fda4)
 - Now run the  crawler again. It will be succesful this time. Once done, go to the databse in glue and check the table that is created with the metadata of redshift table.
-![image](https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/0b3e9e33-e637-4197-908a-57694104021d)
+<img width="400" alt="error" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/0b3e9e33-e637-4197-908a-57694104021d">
 
 
 
