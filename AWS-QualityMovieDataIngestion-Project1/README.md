@@ -15,7 +15,7 @@ This project is regarding Quality Movie Data Ingestion in AWS. Dataset can be fo
 - SNS
 
 ### Architecture Flow
- <img width="493" alt="Architecture" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/7aa2c298-4d7b-402e-a54e-2a24d1221065">
+ <img width="493" alt="Architecture" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/2a7df1d9-9f3b-44b2-aeb4-789f995ff6fa">
 
 - Consume data from S3
 - Consume data from S3
