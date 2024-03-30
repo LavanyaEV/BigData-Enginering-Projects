@@ -32,6 +32,7 @@ We will have Python producer code producing Order and Payment data. Then we have
 - Now we have to write the producer code, it will actually try to interact with these services. So first make sure you have installed GCP SDK in order to access Gcloud cli commands from your terminal.
 Then you have to authenticate using below command.
 <img width="450" alt="docker" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/1c26932f-ba88-489b-bdd1-2dc5f50515a5">
+
 - This will open a new browser. There you have to select the same account which you created the gcp account, then enter credentials and you will get authenticated from this terminal. As soon as you authenticate, on the terminal it will display all the information, i.e, in which configuration file it has configured your credentials (the similar way of setting up AWS configure). This creates a json type of configuration file and that information will be displayed on the terminal itself, i.e, in which path it has actually configured. If we open that file, we can see this type of information. You can see the project_id, accesskey etc.
 <img width="450" alt="docker" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/0f8c4eda-d67c-41e5-94a8-d1c8dd2c85aa">
 <img width="400" alt="json" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/d1726441-660d-42ad-9c0b-dd7549954e85">
