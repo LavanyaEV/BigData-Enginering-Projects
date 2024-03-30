@@ -5,7 +5,7 @@
 
 ### Pre-Requisites
 - GCP Free-tier account
-- GCP CLI Installed (to execute gcloud commands)
+- GCP SDK Installed (to execute gcloud cli commands)
 - Docker
 - Basic to Medium Python Knowledge
 - ETL knowledge
@@ -20,5 +20,8 @@
 <img width="400" alt="Architecture" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/11e550b3-ffb8-403e-8207-e17d03393c53">
 
 We will have Python producer code producing Order and Payment data. Then we have a service in GCP called GCP Pub-Sub. It is similar to Kafka. Inside this, there will be 3 topics: Orders, Payments and DLQ_Payments. Then there will be Order consumer which will simply ingest the data to Cassandra. Payment consumer will ingest the valid data into Cassandra and unmatched data to DLQ_payment table. Cassandra will be hosted in Docker. 
+
+### Step-by-Step Explanation
+- GCP SDK should be installed in order to execute GCP CLI commands. Open Pub/Sub service. Click on create topic. Give name, also click on Add default subscription. Here, Subscriber ID will be created for each topic and thiS ID will be used in our consumer code.
 
 
