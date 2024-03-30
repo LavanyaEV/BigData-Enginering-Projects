@@ -31,9 +31,9 @@ We will have Python producer code producing Order and Payment data. Then we have
 
 - Now we have to write the producer code, it will actually try to interact with these services. So first make sure you have installed GCP SDK in order to access Gcloud cli commands from your terminal.
 Then you have to authenticate using below command.
-![image](https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/1c26932f-ba88-489b-bdd1-2dc5f50515a5)
+<img width="450" alt="docker" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/1c26932f-ba88-489b-bdd1-2dc5f50515a5">
 - This will open a new browser. There you have to select the same account which you created the gcp account, then enter credentials and you will get authenticated from this terminal. As soon as you authenticate, on the terminal it will display all the information, i.e, in which configuration file it has configured your credentials (the similar way of setting up AWS configure). This creates a json type of configuration file and that information will be displayed on the terminal itself, i.e, in which path it has actually configured. If we open that file, we can see this type of information. You can see the project_id, accesskey etc.
-![image](https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/0f8c4eda-d67c-41e5-94a8-d1c8dd2c85aa)
+<img width="450" alt="docker" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/0f8c4eda-d67c-41e5-94a8-d1c8dd2c85aa">
 <img width="400" alt="json" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/d1726441-660d-42ad-9c0b-dd7549954e85">
 
 - After authenticating, it will create very basic and default level of credentials. But here, from the producer code, we want to connect to Pub-Sub service, then publish the data and consume it. So we need to provide those policies here, you need to create a role. So first you need to create a Service Account inside that gcp account, then assign the publisher- consumer role to that service account, and whatever credentials will get generated for this service account, we need to paste that details in the above config file.
@@ -63,11 +63,11 @@ Then you have to authenticate using below command.
 <img width="400" alt="paymentconsumer" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/98b75b00-546a-4558-b3a3-f1a6ea718e1d">
 
 - Open 4 terminals. Now start both consumer code. It will be in wait state until we run producer code. Now run the order_producer code. It will start publishing. Order_consumer will start consuming the data.
-![image](https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/2de36bb9-b49f-4658-87fe-50daf380f471)
+<img width="450" alt="orderproducer" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/2de36bb9-b49f-4658-87fe-50daf380f471">
 <img width="400" alt="orderproducer" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/4f2bacfa-6296-4114-8e23-c0110821c74e">
 
 - Now start the payment_producer code. You can see payment_consumer code has started consuming the data. After order_id 80, it will publish data back to dlq_topic (as order_id is missing).
-![image](https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/bc718738-fb67-4076-9a76-ec69c8b5d811)
+<img width="450" alt="paymentconsumer" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/bc718738-fb67-4076-9a76-ec69c8b5d811">
 <img width="400" alt="paymentconsumer" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/a73f0764-a44f-40a4-9129-b94bf7174b86">
 
 - Now check Cassandra target table data. You can see some payment columns are null. Its becoz join didn’t happen.
