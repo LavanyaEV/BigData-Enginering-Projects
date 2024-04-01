@@ -17,7 +17,8 @@ This is related to the data movement of CDC events related to Product Sales data
 - CloudTrail
 
 ### Architecture Flow
-<img width="400" alt="Architecture" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/240bf3a2-c1d4-4dc3-86b7-65c801a938c6">
+<img width="400" alt="Architecture" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/e1ecdbd2-6602-4a8d-a79d-74993ebe22ce">
+
 
 
 
