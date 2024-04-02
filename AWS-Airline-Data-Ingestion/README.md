@@ -89,7 +89,7 @@ This project is related to processing of Airline Data. On a daily basis, we will
 - Now provide the destination as Redshift with target as the fact table we created.
 <img width="400" alt="glue" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/f1da9b58-bcf1-47e6-a5d3-a88f61c19007">
 
-- Enable Glue Job Bookmarking. Change worker nodes to 2 and in parameters give –JOB_NAME. Then save this job. Now if you run this job it will throw error. Its becoz, in above step, we created a directory in S3 bucket for Airport_dim table(since it’s a redshift table; for S3 table you don’t need this). But if you check the script code, this directory won't be there. So glue job will break. So we have to edit the script to add this s3 directory path. Also, if we edit the script, we wont be able to see the visual ETL again.
+- Go to job details. Enable Glue Job Bookmarking. Change worker nodes to 2 and in parameters give –JOB_NAME. Then save this job. Now if you run this job it will throw error. Its becoz, in above step, we created a directory in S3 bucket for Airport_dim table(since it’s a redshift table; for S3 table you don’t need this). But if you check the script code, this directory won't be there. So glue job will break. So we have to edit the script to add this s3 directory path. Also, if we edit the script, we wont be able to see the visual ETL again.
 <img width="400" alt="glue" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/74283933-4a3e-4b4d-b638-52cfc0c8ea90">
 <img width="450" alt="glue" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/849f6b97-2216-4074-be05-52a5f1a4a215">
 
