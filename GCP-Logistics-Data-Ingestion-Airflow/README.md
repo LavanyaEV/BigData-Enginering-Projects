@@ -43,7 +43,21 @@ This project is related to Logistics Data Ingestion. Here, we will daily receive
 - Then move the processed file into Archival folder using move command. Then write the dependency between all these steps.
 <img width="400" alt="code" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/55921551-844e-4985-9dd4-1bcf96e2d38f">
 
-- 
+- Now open Composer(managed airflow) and create cluster.
+<img width="400" alt="airflow" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/72ec83b7-6951-494c-b8db-98468961f323">
+
+- Open the Dag folder and upload the above script. Open the Airflow webserver and click on Trigger Dag. 
+<img width="400" alt="dag" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/147d6971-4e55-4900-9a35-4c2eed4722ef">
+<img width="400" alt="airflow" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/b7fde002-ab8a-42bb-ba92-e22d97996978">
+
+- Now upload a file inside the input_data/ folder(as sensor is listening). You can see the execution of each steps. Once all the steps are completed, if you check the input_data/ folder, the file wont be there. Open the archival folder, file will be present there.
+
+
+
+
+
+
+
 
 
 
