@@ -51,6 +51,25 @@ This project is related to Logistics Data Ingestion. Here, we will daily receive
 <img width="400" alt="airflow" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/b7fde002-ab8a-42bb-ba92-e22d97996978">
 
 - Now upload a file inside the input_data/ folder(as sensor is listening). You can see the execution of each steps. Once all the steps are completed, if you check the input_data/ folder, the file wont be there. Open the archival folder, file will be present there.
+<img width="400" alt="airflow" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/86f8bb3d-c74c-4f57-b801-b96432083a00">
+<img width="400" alt="airflow" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/f54776ec-1b0f-4451-ad44-90420aad625f)">
+
+- Go to Dataproc cluster and do SSH login. Check whether we received the partitioned data (on date) in our partition table. Below, you can see one partition is created based on the date we uploaded. Now check in Hive also, for the data in partitioned table.
+<img width="400" alt="dataproc" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/306e3b34-30c0-4928-a488-fe307b220b5d">
+<img width="400" alt="dataproc" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/c221fa6d-e60f-4d6d-8300-686424af5356">
+<img width="400" alt="dataproc" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/27bb7193-3af8-4ff4-9bdd-ca0d12d9e5de">
+
+- Now again insert one more file into that input_data/ folder. Then trigger the pipeline. After its successful run, if you check in Hadoop file directory, there will be 2 partitions. Check the archival folder, there will be 2 files now.
+<img width="400" alt="dataproc" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/2ca2217e-bf4c-4293-84c7-8eed1dcd27da">
+<img width="400" alt="dataproc" src="https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/8650fef8-609b-4f94-9d78-67e20e36d863">
+
+Congrats for completing the project!!!
+
+
+
+
+
+
 
 
 
