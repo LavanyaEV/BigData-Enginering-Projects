@@ -46,7 +46,7 @@ This project is regarding Quality Movie Data Ingestion in AWS. Dataset can be fo
 - To change that, click on the VPC link of our redshift cluster (go to cluster and go to properties, there u can see the VPC). Click on endpoints. Click create endpoint. Provide a name-> in services, select S3 and select below gateway-> select vpc same as that of redshift. Select the routing table attcahed with that, and now click create endpoint. You can see the endpoint for s3 created. Also create a VPC nedpoint for glue in similar way.
   
 ![image](https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/4c66825e-b5c8-451f-9f1b-b9dbf7d392c8)
-![image](https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/92e801b0-b09b-4f93-bce9-4feb65635df4)
+<!--![image](https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/92e801b0-b09b-4f93-bce9-4feb65635df4)-->
 ![image](https://github.com/user-attachments/assets/fbadd753-ec17-4e84-8d74-5aedda6c8a8e)
 ![image](https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/d154bad8-cc99-4245-bcc1-1fb1f84437f5)
 ![image](https://github.com/LavanyaEV/BigData-Enginering-Projects/assets/48172931/07b8e1c6-eb08-423c-bf74-1955996042d7)
